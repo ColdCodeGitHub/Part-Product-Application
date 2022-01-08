@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductController">
+    <children>
+      <AnchorPane layoutX="15.0" layoutY="15.0" prefHeight="200.0" prefWidth="674.0" stylesheets="@AnchorPane.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label layoutX="38.0" layoutY="32.0" stylesheets="@Background.css" text="Modify Product" />
+            <HBox layoutX="49.0" layoutY="85.0" prefHeight="32.0" prefWidth="200.0">
+               <children>
+                  <Label text="ID" />
+                  <TextField fx:id="idField" disable="true" promptText="Auto Gen- Disabled">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="49.0" layoutY="128.0" prefHeight="32.0" prefWidth="200.0">
+               <children>
+                  <Label text="Name" />
+                  <TextField fx:id="nameField">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="49.0" layoutY="169.0" prefHeight="32.0" prefWidth="149.0">
+               <children>
+                  <Label text="Inv" />
+                  <TextField fx:id="invField" prefHeight="25.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="26.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="49.0" layoutY="208.0" prefHeight="32.0" prefWidth="159.0">
+               <children>
+                  <Label text="Price" />
+                  <TextField fx:id="priceField" prefHeight="25.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="16.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="47.0" layoutY="246.0" prefHeight="32.0" prefWidth="302.0">
+               <children>
+                  <Label text="Max" />
+                  <TextField fx:id="maxField" prefHeight="25.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label text="Min">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="minField" prefHeight="25.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TextField fx:id="search" layoutX="554.0" layoutY="73.0" prefHeight="25.0" prefWidth="159.0" promptText="Search by Part ID or Name" />
+            <VBox layoutX="391.0" layoutY="101.0" prefHeight="436.0" prefWidth="343.0" AnchorPane.rightAnchor="5.0">
+               <children>
+                  <TableView fx:id="partsTableView" prefHeight="139.0" prefWidth="251.0">
+                    <columns>
+                      <TableColumn fx:id="idPartCol" prefWidth="55.0" text="Part ID" />
+                      <TableColumn fx:id="namePartCol" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="invPartCol" prefWidth="94.0" text="Inventory Level" />
+                        <TableColumn fx:id="pricePartCol" prefWidth="118.0" text="Price/ Cost per Unit" />
+                    </columns>
+                  </TableView>
+                  <Button mnemonicParsing="false" onAction="#addButton" text="Add">
+                     <VBox.margin>
+                        <Insets left="200.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <TableView fx:id="associatedPartsTableView" prefHeight="137.0" prefWidth="302.0">
+                    <columns>
+                      <TableColumn fx:id="idAsPartCol" prefWidth="53.0" text="Part ID" />
+                      <TableColumn fx:id="nameAsPartCol" prefWidth="76.0" text="Part Name" />
+                        <TableColumn fx:id="invAsPartCol" prefWidth="96.0" text="Inventory Level" />
+                        <TableColumn fx:id="priceAsPartCol" prefWidth="117.0" text="Price/ Cost per Unit" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <Button mnemonicParsing="false" onAction="#deleteAssociatedPart" prefHeight="25.0" prefWidth="145.0" text="Remove Associated Part">
+                     <VBox.margin>
+                        <Insets left="150.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <HBox prefHeight="25.0" prefWidth="302.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#saveButton" text="Save">
+                           <HBox.margin>
+                              <Insets left="150.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#cancelButton" text="Cancel">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button layoutX="502.0" layoutY="73.0" mnemonicParsing="false" onAction="#searchMethod" text="Search" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

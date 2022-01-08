@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPartController">
+   <children>
+      <HBox layoutX="200.0" layoutY="57.0" prefHeight="78.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label stylesheets="@Background.css" text="Add Part">
+               <HBox.margin>
+                  <Insets left="50.0" top="30.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton fx:id="inHouse" mnemonicParsing="false" onAction="#changeLabel2" text="In-House">
+               <HBox.margin>
+                  <Insets left="30.0" top="30.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="ToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="outsourced" mnemonicParsing="false" onAction="#changeLabel" text="Outsourced" toggleGroup="$ToggleGroup">
+               <HBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </HBox.margin>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox layoutX="53.0" layoutY="78.0" prefHeight="41.0" prefWidth="337.0">
+         <children>
+            <Label text="ID" />
+            <TextField disable="true" promptText="Auto Gen- Disabled">
+               <HBox.margin>
+                  <Insets left="96.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="53.0" layoutY="119.0" prefHeight="41.0" prefWidth="329.0">
+         <children>
+            <Label text="Name" />
+            <TextField fx:id="nameField">
+               <HBox.margin>
+                  <Insets left="77.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="53.0" layoutY="160.0" prefHeight="41.0" prefWidth="292.0">
+         <children>
+            <Label text="Inv" />
+            <TextField fx:id="invField">
+               <HBox.margin>
+                  <Insets left="93.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="53.0" layoutY="282.0" prefHeight="41.0" prefWidth="337.0">
+         <children>
+            <Label fx:id="label" prefHeight="17.0" prefWidth="95.0" text="----------" />
+            <TextField fx:id="inOrOut" prefHeight="25.0" prefWidth="120.0">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="53.0" layoutY="200.0" prefHeight="41.0" prefWidth="266.0">
+         <children>
+            <Label text="Price/Cost" />
+            <TextField fx:id="priceField">
+               <HBox.margin>
+                  <Insets left="55.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="53.0" layoutY="241.0" prefHeight="41.0" prefWidth="498.0">
+         <children>
+            <Label text="Max" />
+            <TextField fx:id="maxField">
+               <HBox.margin>
+                  <Insets left="86.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="Min">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="minField">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="282.0" layoutY="323.0" prefHeight="25.0" prefWidth="123.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#saveMethod" text="Save" />
+            <Button mnemonicParsing="false" onAction="#cancelMethod" text="Cancel">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

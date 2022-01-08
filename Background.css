@@ -1,0 +1,17 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+Label{
+    -fx-font-weight: bold;
+}
+
+
+BorderPane{
+    
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-border-color: black;
+}
+
